@@ -1,0 +1,36 @@
+<h3>List of tasks</h3>
+
+<table class="table table-striped" style="width: 100%;">
+    <tr>
+        <td style="width: 5%">#</td>
+        <td style="width: 10%">Name</td>
+        <td style="width: 25%">Email</td>
+        <td style="width: 40%">Task</td>
+        <td style="width: 15%">Img</td>
+        <td style="width: 5%">Status</td>
+        <td style="width: 5%">Edit</td>
+        <td style="width: 5%">Delete</td>
+    </tr>
+    <?php foreach($data as $item) { ?>
+    <tr>
+        <td><?=$item['id']?></td>
+        <td><?=$item['name']?></td>
+        <td><?=$item['email']?></td>
+        <td><?=$item['task_text']?></td>
+        <td><img src="/img/<?=$item['img']?>" class="img-responsive" alt="<?=$item['img']?>"></td>
+        <td>
+            <?php if(!$item['done']) { ?>
+            <a href="/admin/tasks/markAsDone/<?=$item['id']?>"><button class="btn btn-sm btn-info">Mark as done</button></a>
+            <?php }else{ ?>
+            Done
+            <?php } ?>
+        </td>
+        <td>
+            <a href="/admin/tasks/edit/<?=$item['id']?>"><button class="btn btn-sm btn-danger">Edit</button></a>
+        </td>
+        <td>
+            <a href="/admin/tasks/delete/<?=$item['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">Delete</button></a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>

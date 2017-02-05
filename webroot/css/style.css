@@ -1,0 +1,19 @@
+body{
+    padding-top: 50px;
+}
+
+.starter-template{
+    padding: 10px 15px;
+}
+form{
+    width: 100%;
+}
+
+.alert{
+    margin-top: 10px;
+    width: 100%;
+}
+
+#addButton{
+    margin-top: 15px;
+}
