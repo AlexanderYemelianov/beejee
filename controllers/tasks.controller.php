@@ -10,16 +10,8 @@ class TasksController extends Controller {
 
     public function index()
     {
-        $this->data = $this->model->getList();
-    }
-
-    public function sortBy()
-    {
-        if(isset($this->params[0]))
-        {
-            $by = strtolower($this->params[0]);
-            $this->data = $this->model->getListBy($by);
-        }
+        $by = strtolower($this->params[0]);
+        $this->data = $this->model->getListBy($by);
     }
 
     public function add()
@@ -37,7 +29,8 @@ class TasksController extends Controller {
 
     public function admin_index()
     {
-        $this->data = $this->model->getList();
+        $by = strtolower($this->params[0]);
+        $this->data = $this->model->getListBy($by);
     }
 
     public function admin_edit()

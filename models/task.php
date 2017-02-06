@@ -2,13 +2,6 @@
 
 class Task extends model{
 
-    public function getList()
-    {
-        $sql = "SELECT * FROM `tasks` WHERE 1";
-
-        return $this->db->query($sql);
-    }
-
     public function getListBy($by)
     {
 
@@ -18,11 +11,9 @@ class Task extends model{
             case 'name':
                 $sql .= " ORDER BY `name`";
                 break;
-
             case 'email':
                 $sql .= " ORDER BY `email`";
                 break;
-
             case 'status':
                 $sql .= " ORDER BY `done` DESC";
                 break;
@@ -30,8 +21,6 @@ class Task extends model{
 
         return $this->db->query($sql);
     }
-
-
 
     public function save($data, $file, $id = null)
     {
