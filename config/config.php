@@ -10,8 +10,8 @@ Config::setSettings('default_controller', 'tasks');
 Config::setSettings('default_action', 'index');
 
 Config::setSettings('db_dsn', 'mysql:dbname=mvc;host=localhost');
-Config::setSettings('db_user', 'root');
-Config::setSettings('db_password', 'superroot');
+Config::setSettings('db_user', '');
+Config::setSettings('db_password', '');
 
 Config::setSettings('salt', '2kfit947tmfd98jiw36qpfl702w8fk50');
 
